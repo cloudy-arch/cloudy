@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Person1 {
+public:
+	void Person1show()
+	{
+		cout << "Person1->>>>>>" << endl;
+	}
+};
+
+class Person2 {
+public:
+	void Person2show()
+	{
+		cout << "Person2->>>>>>" << endl;
+	}
+};
+
+template<class T>
+class Person{
+public:
+	void fun1()
+	{
+		obj.Person1show();
+	}
+
+	void fun2()
+	{
+		obj.Person2show();
+	}
+
+	T obj;
+};
+
+void test()
+{
+	 Person<Person1> p1;
+	 p1.fun1();
+	 p1.fun2();	 
+}
+
+int main()
+{
+	test();
+
+	system("pause");
+	return 0;
+}
